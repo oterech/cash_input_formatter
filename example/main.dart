@@ -10,7 +10,6 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
-    //Example App Route
     return MaterialApp(
       title: 'Cash Input Formatter Example',
       theme: ThemeData(
@@ -43,7 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              // Shows widget with symbol
+              /// Shows widget with symbol
               Column(
                 children: [
                   const Align(
@@ -61,7 +60,8 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                           child: TextFormField(
                             textAlign: TextAlign.center,
-                            // To use formatter simply add it as an input formatter.
+
+                            /// To use formatter simply add it as an input formatter.
                             inputFormatters: const [
                               CashInputFormatter(),
                             ],
@@ -76,7 +76,8 @@ class _MyHomePageState extends State<MyHomePage> {
               const Padding(
                 padding: EdgeInsets.symmetric(vertical: 40.0),
               ),
-              // Shows widget without symbol
+
+              /// Shows widget without symbol
               Column(
                 children: [
                   Padding(
@@ -93,7 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           child: TextFormField(
                             textAlign: TextAlign.center,
                             inputFormatters: const [
-                              // To use formatter simply add it as an input formatter.
+                              /// To use formatter simply add it as an input formatter.
                               CashInputFormatter(useSymbol: false)
                             ],
                           ),
