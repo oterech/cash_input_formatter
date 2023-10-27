@@ -1,4 +1,4 @@
-import 'package:currency_formatter/cash_input_formatter.dart';
+import 'package:cash_input_formatter/cash_input_formatter.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -56,7 +56,9 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                       child: TextFormField(
                         textAlign: TextAlign.center,
-                        inputFormatters: const [CashInputFormatter()],
+                        inputFormatters: const [
+                          CashInputFormatter(),
+                        ],
                       ),
                     ),
                   ],

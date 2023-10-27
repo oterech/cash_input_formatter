@@ -1,4 +1,4 @@
-import 'package:currency_formatter/validators.dart';
+import 'package:cash_input_formatter/validators.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
 
