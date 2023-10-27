@@ -1,6 +1,7 @@
 name: cash_input_formatter
+homepage: https://github.com/oterech
 description: Another cash formatter
-version: 1.0.0+1
+version: 0.1.0+1
 
 environment:
   sdk: '>=2.18.2 <4.0.0'
