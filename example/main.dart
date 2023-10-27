@@ -1,4 +1,4 @@
-import 'package:currency_formatter/cash_formatter.dart';
+import 'package:currency_formatter/cash_input_formatter.dart';
 import 'package:flutter/material.dart';
 
 void main() {
