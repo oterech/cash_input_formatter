@@ -6,7 +6,9 @@ Simple formatter for cash input. Most formatters by default add centers upon inp
 
 ``` dart
  TextFormField(
-                        textAlign: TextAlign.center,
-                        inputFormatters: const [CashInputFormatter()],
+      textAlign: TextAlign.center,
+      inputFormatters: const [
+      CashInputFormatter(),
+    ],
                       ),
 ```
