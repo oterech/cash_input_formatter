@@ -1,8 +1,8 @@
 name: cash_input_formatter
 homepage: https://github.com/oterech/cash_input_formatter
 description: Another cash formatter for TextFormField. Formats input for cash, this does not automatically show the decimal place, only on user input.
-# Version Code
-version: 0.1.2+3
+
+version: 0.1.3+4
 
 environment:
   sdk: '>=2.18.2 <4.0.0'

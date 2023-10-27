@@ -2,9 +2,9 @@ import 'package:cash_input_formatter/validators.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
 
-// Currently only supports USD.
+/// Formatter that extends TextInputFormatter, Currently only supports USD.
 class CashInputFormatter extends TextInputFormatter {
-  // Pass false to remove the dollar symbol placed.
+  /// Pass false to remove the dollar symbol placed.
   final bool useSymbol;
 
   const CashInputFormatter({this.useSymbol = true});
@@ -17,10 +17,11 @@ class CashInputFormatter extends TextInputFormatter {
     late NumberFormat format;
     final NumberFormat thousands = NumberFormat.decimalPattern("en_us");
 
-// Shows the dollar sign by default, with option to remove value using useSymbol
     format = NumberFormat.currency(
+      /// Shows the dollar sign by default, with option to remove value using useSymbol
       customPattern: useSymbol ? "\$###,###.0#" : "###,###.0#",
-      // Removes decimal digits by default.
+
+      /// Removes decimal digits by default.
       decimalDigits: 0,
     );
 
@@ -30,6 +31,7 @@ class CashInputFormatter extends TextInputFormatter {
           thousands
               .format(
                 num.parse(
+                  /// Replaces any non numeric value with empty character
                   string.replaceAll(
                     RegExp(
                       r"\D+",
@@ -50,7 +52,7 @@ class CashInputFormatter extends TextInputFormatter {
 
     String text = newValue.text;
 
-// Removes symbols from text.
+    /// Removes symbols from text.
     text = text.replaceAll(
       amountNoSymbol,
       "",
@@ -67,12 +69,13 @@ class CashInputFormatter extends TextInputFormatter {
 
           String cents = splitAmount[1].toString();
           if (cents.length > 2) {
-            // Does not allow for more than two digits after the cents place.
+            /// Does not allow for more than two digits after the cents place.
             cents = cents.substring(0, 2);
           }
 
           text = "${formatter(dollars)}.$cents";
         } else {
+          /// This handles if the only character is $
           if (text.length == 1 && text == r"$") {
             return const TextEditingValue(text: '');
           }
@@ -84,18 +87,19 @@ class CashInputFormatter extends TextInputFormatter {
         text: text,
         selection: TextSelection.fromPosition(
           TextPosition(
-            // Sets the cursor to the end of the field
+            /// Sets the cursor to the end of the field
             offset: text.length,
           ),
         ),
       );
     }
-    // If text is empty return text, with cursor at the end of the field.
+
+    /// If text is empty return text, with cursor at the end of the field.
     return newValue.copyWith(
       text: text,
       selection: TextSelection.fromPosition(
         TextPosition(
-          // Sets the cursor to the end of the field
+          /// Sets the cursor to the end of the field
           offset: text.length,
         ),
       ),
